@@ -1,4 +1,31 @@
-<iframe
-  src="https://maps.google.com/maps?q=<Latitude Asj>,<Longitude Asj>&layer=c&z=17&sll=<Latitude Asj>,<Longitude Asj>&cbp=13,276.3,0,0,0&cbll=<Latitude Asj>,<Longitude Asj>&hl=en&ved=0CAoQ2wU&sa=X&output=svembed&layer=c"
-  allowfullscreen>
-</iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embedded Google Map</title>
+</head>
+<body>
+
+  <!-- Ajoutez votre iframe avec la carte Google Maps ici -->
+  <iframe
+    width="600"
+    height="450"
+    frameborder="0"
+    style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?q=<LATITUDE_PARAM>,<LONGITUDE_PARAM>&layer=c&z=17&sll=<LATITUDE_PARAM>,<LONGITUDE_PARAM>&cbp=13,276.3,0,0,0&cbll=<LATITUDE_PARAM>,<LONGITUDE_PARAM>"
+    allowfullscreen>
+  </iframe>
+
+  <!-- Script JavaScript pour récupérer les paramètres d'URL -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const latitudeParam = urlParams.get('latitude');
+    const longitudeParam = urlParams.get('longitude');
+
+    // Mettez à jour les paramètres de l'iframe avec les valeurs dynamiques
+    document.querySelector('iframe').src = `https://www.google.com/maps/embed/v1/place?q=${latitudeParam},${longitudeParam}&layer=c&z=17&sll=${latitudeParam},${longitudeParam}&cbp=13,276.3,0,0,0&cbll=${latitudeParam},${longitudeParam}`;
+  </script>
+
+</body>
+</html>
