@@ -24,7 +24,7 @@
     const longitudeParam = urlParams.get('longitude');
 
     // Mettez à jour les paramètres de l'iframe avec les valeurs dynamiques
-    document.querySelector('iframe').src = `https://www.google.com/maps/embed/v1/place?q=${latitudeParam},${longitudeParam}&layer=c&z=17&sll=${latitudeParam},${longitudeParam}&cbp=13,276.3,0,0,0&cbll=${latitudeParam},${longitudeParam}`;
+    document.querySelector('iframe').src = `https://www.google.com/maps/?q${latitudeParam},${longitudeParam}&layer=c`;
   </script>
 
 </body>
